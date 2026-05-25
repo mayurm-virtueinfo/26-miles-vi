@@ -1,0 +1,105 @@
+This command:
+
+eas build --platform android
+
+uses Expo Application Services to create an Android app build in the cloud.
+
+🧠 Simple meaning
+
+Instead of building APK/AAB on your laptop:
+
+Gradle + Android Studio + local build
+
+Expo uploads your project to Expo servers and builds it there.
+
+✅ What it generates
+
+Depending on profile:
+
+Command	Output
+eas build --platform android --profile preview	APK
+eas build --platform android --profile production	AAB
+📦 APK vs AAB
+Type	Use
+APK	Direct install/testing
+AAB	Google Play Store upload
+🚀 What happens internally
+
+When you run:
+
+eas build --platform android
+
+Expo does:
+
+Reads your:
+app.json
+eas.json
+Uploads source code to Expo cloud
+Installs dependencies
+Runs Android Gradle build
+Signs app
+Generates:
+.apk
+OR
+.aab
+Gives download URL
+📍 Example
+
+Your eas.json has:
+
+"preview": {
+  "distribution": "internal",
+  "android": {
+    "buildType": "apk"
+  }
+}
+
+So this command:
+
+eas build --platform android --profile preview
+
+👉 creates APK.
+
+🏪 Production build
+eas build --platform android --profile production
+
+👉 creates Play Store AAB.
+
+☁️ Why EAS is useful
+
+Benefits:
+
+✅ No Android Studio needed for release builds
+✅ No local Gradle headaches
+✅ Easier signing
+✅ CI/CD friendly
+✅ Team collaboration
+✅ Safer keystore management
+
+⚠️ Important
+
+You must:
+
+eas login
+
+before build.
+
+And project must have valid:
+
+"projectId"
+
+inside app.json.
+
+💡 Your common commands
+APK
+eas build --platform android --profile preview
+AAB
+eas build --platform android --profile production
+TestFlight
+eas build --platform ios --profile production
+🧠 Simple analogy
+Local build	EAS build
+Your laptop builds app	Expo servers build app
+More setup	Easier
+Slower machine dependency	Cloud build
+Manual signing	Assisted signing
