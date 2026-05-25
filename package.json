@@ -69,6 +69,7 @@
     "@types/react-native-version-check": "^3.4.8",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~8.0.1",
+    "patch-package": "^8.0.1",
     "typescript": "~5.8.3"
   },
   "private": true,
