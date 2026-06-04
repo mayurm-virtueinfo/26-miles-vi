@@ -103,3 +103,7 @@ Your laptop builds app	Expo servers build app
 More setup	Easier
 Slower machine dependency	Cloud build
 Manual signing	Assisted signing
+
+
+eas submit --platform android
+eas submit --platform ios
