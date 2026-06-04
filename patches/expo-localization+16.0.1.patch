@@ -6,7 +6,7 @@ index 73b2b9d..f4f1457 100644
        return "roc"
      case .iso8601:
        return "iso8601"
-+    @unknown default:
++    default:
 +      return "\(calendar.identifier)"
      }
    }

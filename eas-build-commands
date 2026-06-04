@@ -107,3 +107,8 @@ Manual signing	Assisted signing
 
 eas submit --platform android
 eas submit --platform ios
+
+
+
+eas build --platform ios --profile production
+eas submit --platform ios --profile production --latest
